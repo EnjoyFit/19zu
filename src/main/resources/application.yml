@@ -5,7 +5,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://120.79.150.116:3306/db_1805?userSSL=false&serverTimezone=GMT
+    url: jdbc:mysql://120.79.150.116:3306/EnjoyFitness?userSSL=false&serverTimezone=GMT
     username: root
     password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
@@ -13,3 +13,7 @@ spring:
 #  mapper-locations:
 
 #≈‰÷√MyBatis
+
+mybatis:
+  type-aliases-package: com.qfedu.entity
+  mapper-locations: classpath:mapper/*.xml

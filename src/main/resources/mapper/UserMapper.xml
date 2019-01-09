@@ -101,4 +101,12 @@
       phono = #{phono,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByNameAndPass" resultMap="BaseResultMap">
+
+  select
+  username,password
+  from sys_user where username =#{username} and password
+  =#{password}
+</select>
 </mapper>

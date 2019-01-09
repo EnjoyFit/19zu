@@ -35,4 +35,13 @@ public class UserController {
         }
     }
 
+    @GetMapping("login.do")
+
+    private  ResultVo login(String username, String password) {
+        ResultVo sf = uservice.login(username, password);
+
+        return sf;
+    }
+
+
 }

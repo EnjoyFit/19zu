@@ -19,7 +19,7 @@ public class ItemController {
     @Autowired
     private ItemService service;
 
-    @ApiOperation(notes = "id:登陆用户的id；",tags = {"id"},value = "用户登陆id")
+    @ApiOperation(notes = "id:登陆用户的id；",tags = {"订单的接口"},value = "用户登陆id")
     @PostMapping("deleteItem.do")
     @CrossOrigin
     private ResultVo deleteItem(@ApiParam(value = "201") Integer id) {
@@ -29,7 +29,7 @@ public class ItemController {
             return ResultVo.setOK(null);
         }
     }
-    @ApiOperation(notes = "item:对象；",tags = {"id"},value = "当前item")
+    @ApiOperation(notes = "item:对象；",tags = {"订单的接口"},value = "当前item")
     @PostMapping("insert.do")
     @CrossOrigin
     private ResultVo insert(@ApiParam(value = "202") Item item){
@@ -40,7 +40,7 @@ public class ItemController {
         }
     }
 
-    @ApiOperation(notes = "item:对象；",tags = {"id"},value = "当前item")
+    @ApiOperation(notes = "item:对象；",tags = {"订单的接口"},value = "当前item")
     @PostMapping("insertSelective.do")
     @CrossOrigin
     private ResultVo insertSelective(@ApiParam(value = "202") Item item){
@@ -51,7 +51,7 @@ public class ItemController {
         }
     }
 
-    @ApiOperation(notes = "id:登陆用户的id；",tags = {"id"},value = "用户登陆id")
+    @ApiOperation(notes = "id:登陆用户的id；",tags = {"订单的接口"},value = "用户登陆id")
     @PostMapping("selectByPrimaryKey.do")
     @CrossOrigin
     private ResultVo selectByPrimaryKey(@ApiParam(value = "202") Integer id){
@@ -62,7 +62,7 @@ public class ItemController {
         }
     }
 
-    @ApiOperation(notes = "item:对象；",tags = {"id"},value = "当前item")
+    @ApiOperation(notes = "item:对象；",tags = {"订单的接口"},value = "当前item")
     @PostMapping("updateByPrimaryKeySelective.do")
     @CrossOrigin
     private ResultVo updateByPrimaryKeySelective(@ApiParam(value = "202") Item item){
@@ -73,7 +73,7 @@ public class ItemController {
         }
     }
 
-    @ApiOperation(notes = "item:对象；",tags = {"id"},value = "当前item")
+    @ApiOperation(notes = "item:对象；",tags = {"订单的接口"},value = "当前item")
     @PostMapping("updateByPrimaryKey.do")
     @CrossOrigin
     private ResultVo updateByPrimaryKey(@ApiParam(value = "202") Item item){

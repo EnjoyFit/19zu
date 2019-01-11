@@ -13,12 +13,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Api(produces = "这是第十九组编写的接口文档",value = "接口文档")
 @RestController
 public class BaiKeController {
     @Autowired
     private BaiKeService baiKeService;
 
     //添加话题
+    @ApiOperation(notes = "话题对象的信息",tags = {"话题的接口"},value = "话题添加的接口")
     @PostMapping("addBaike.do")
     @CrossOrigin
     public ResultVo addBaike(@ApiParam(value = "baike对象") BaiKe baiKe) {
@@ -32,17 +34,19 @@ public class BaiKeController {
         }
     }
     //展示全部话题
+    @ApiOperation(notes = "话题对象的信息",tags = {"话题的接口"},value = "话题展示的接口")
     @PostMapping("quarryBaike.do")
     @CrossOrigin
-    public PageBeanVo<BaiKe> quarryBaiKe(int page,int limit) {
+    public PageBeanVo<BaiKe> quarryBaiKe(@ApiParam(value = "分页的信息") int page,int limit) {
         return baiKeService.queryPage(page, limit);
 
     }
 
     //修改话题
+    @ApiOperation(notes = "话题对象的信息",tags = {"话题的接口"},value = "话题修改的接口")
     @GetMapping("updateBaike.do")
     @CrossOrigin
-    public ResultVo upBaike(BaiKe baiKe) {
+    public ResultVo upBaike(@ApiParam(value = "对象") BaiKe baiKe) {
         int i = baiKeService.updateBaike(baiKe);
         if (i>0) {
             return ResultVo.setOK(null);
@@ -52,10 +56,11 @@ public class BaiKeController {
 
     }
 
-    //删除话题
+    //删除话题删除
+    @ApiOperation(notes = "话题删除的接口",tags = {"话题的接口"},value = "话题删除的接口")
     @PostMapping("delGoods.do")
     @CrossOrigin
-    public ResultVo delBaike(Integer id) {
+    public ResultVo delBaike(@ApiParam(value = "删除对象的id") Integer id) {
         int i = baiKeService.delBaike(id);
 
         if (i>0) {

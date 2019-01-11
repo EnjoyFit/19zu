@@ -20,10 +20,10 @@ public class UserController {
     @Autowired
     private UserService uservice;
 
-    @ApiOperation(notes = "实现传递参数，响应指定数量的数据",tags = {"对象"},value = "登录的接口")
+    @ApiOperation(notes = "用于的信息",tags = {"用户登录注册的接口"},value = "注册的接口")
     @PostMapping("savauser.do")
     @CrossOrigin
-    private ResultVo savaUser(@ApiParam(value = "111") User user) {
+    private ResultVo savaUser(@ApiParam(value = "用户对象") User user) {
        boolean b = uservice.savaUser(user);
 
         if(b) {
@@ -35,10 +35,10 @@ public class UserController {
         }
     }
 
-    @ApiOperation(notes = "实现传递参数，响应指定数量的数据",tags = {"对象"},value = "注册的接口")
+    @ApiOperation(notes = "用户的账号密码",tags = {"用户登录注册的接口"},value = "登录的接口")
     @GetMapping("login.do")
 
-    private  ResultVo login(String username, String password) {
+    private  ResultVo login(@ApiParam(value = "用户账号密码") String username, String password) {
         ResultVo sf = uservice.login(username, password);
 
         return sf;

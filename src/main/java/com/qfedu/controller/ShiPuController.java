@@ -20,7 +20,7 @@ public class ShiPuController {
     //添加食品
     @PostMapping("addShiPu.do")
     @CrossOrigin
-    public ResultVo addShiPu(@ApiParam(value = "baike对象") ShiPu shiPu) {
+    public ResultVo addShiPu(ShiPu shiPu) {
         boolean b =shiPuService.insertsshipu(shiPu);
         if(b) {
             return ResultVo.setOK(null);
@@ -52,7 +52,7 @@ public class ShiPuController {
     }
 
     //删除商品
-    @PostMapping("delGoods.do")
+    @PostMapping("delShipin.do")
     @CrossOrigin
     public ResultVo delShiPu(Integer id) {
         int i = shiPuService.delshipu(id);

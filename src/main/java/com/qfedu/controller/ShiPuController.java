@@ -1,11 +1,10 @@
 package com.qfedu.controller;
 
 import com.qfedu.entity.BaiKe;
-import com.qfedu.service.BaiKeService;
+import com.qfedu.entity.ShiPu;
+import com.qfedu.service.ShiPuService;
 import com.qfedu.vo.PageBeanVo;
 import com.qfedu.vo.ResultVo;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,15 +13,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class BaiKeController {
+public class ShiPuController {
     @Autowired
-    private BaiKeService baiKeService;
+    private ShiPuService shiPuService;
 
-    //添加话题
-    @PostMapping("addBaike.do")
+    //添加食品
+    @PostMapping("addShiPu.do")
     @CrossOrigin
-    public ResultVo addBaike(@ApiParam(value = "baike对象") BaiKe baiKe) {
-        boolean b =baiKeService.insertsBaike(baiKe);
+    public ResultVo addShiPu(@ApiParam(value = "baike对象") ShiPu shiPu) {
+        boolean b =shiPuService.insertsshipu(shiPu);
         if(b) {
             return ResultVo.setOK(null);
 
@@ -31,19 +30,19 @@ public class BaiKeController {
 
         }
     }
-    //展示全部话题
-    @PostMapping("quarryBaike.do")
+    //展示全部商品
+    @PostMapping("quarryShiPu.do")
     @CrossOrigin
-    public PageBeanVo<BaiKe> quarryBaiKe(int page,int limit) {
-        return baiKeService.queryPage(page, limit);
+    public PageBeanVo<ShiPu> quarryShiPu(int page, int limit) {
+        return shiPuService.queryPage(page,limit);
 
     }
 
-    //修改话题
-    @GetMapping("updateBaike.do")
+    //修改商品
+    @GetMapping("updateShiPu.do")
     @CrossOrigin
-    public ResultVo upBaike(BaiKe baiKe) {
-        int i = baiKeService.updateBaike(baiKe);
+    public ResultVo upShiPu(ShiPu ShiPu) {
+        int i = shiPuService.updateShipu(ShiPu);
         if (i>0) {
             return ResultVo.setOK(null);
         } else {
@@ -52,11 +51,11 @@ public class BaiKeController {
 
     }
 
-    //删除话题
+    //删除商品
     @PostMapping("delGoods.do")
     @CrossOrigin
-    public ResultVo delBaike(Integer id) {
-        int i = baiKeService.delBaike(id);
+    public ResultVo delShiPu(Integer id) {
+        int i = shiPuService.delshipu(id);
 
         if (i>0) {
             return ResultVo.setOK(null);
@@ -64,5 +63,4 @@ public class BaiKeController {
             return ResultVo.setERROR();
         }
     }
-
 }

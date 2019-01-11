@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@Api(produces = "这是Java编写的接口文档",value = "接口文档")
+@Api(produces = "这是第十九组编写的接口文档",value = "接口文档")
 @RestController
 public class UserController {
 
@@ -20,7 +20,7 @@ public class UserController {
     @Autowired
     private UserService uservice;
 
-    @ApiOperation(notes = "实现传递参数，响应指定数量的数据",tags = {"对象"},value = "实际传来的数据")
+    @ApiOperation(notes = "实现传递参数，响应指定数量的数据",tags = {"对象"},value = "登录的接口")
     @PostMapping("savauser.do")
     @CrossOrigin
     private ResultVo savaUser(@ApiParam(value = "111") User user) {
@@ -35,6 +35,7 @@ public class UserController {
         }
     }
 
+    @ApiOperation(notes = "实现传递参数，响应指定数量的数据",tags = {"对象"},value = "注册的接口")
     @GetMapping("login.do")
 
     private  ResultVo login(String username, String password) {

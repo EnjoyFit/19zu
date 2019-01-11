@@ -18,8 +18,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2  //启用Swagger
 public class SwaggerConfig {
     public ApiInfo createApi(){
-        return new ApiInfoBuilder().title("第六期联合项目接口文档").
-                description("为了更好的融入团队，并且模拟真实的企业开发环境").
+        return new ApiInfoBuilder().title("19组联合项目接口文档").
+                description("为了更好地练习开发啊").
                 contact(new Contact("Java1806","http://www.7sa.com","121212@163.com")).build();
     }
     @Bean  //等价于 <bean>标签

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.dao.JstrainMapper">
+  <resultMap id="BaseResultMap" type="com.qfedu.entity.Jstrain">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="xlclass" jdbcType="VARCHAR" property="xlclass" />
+    <result column="stime" jdbcType="VARCHAR" property="stime" />
+    <result column="hdo" jdbcType="VARCHAR" property="hdo" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, xlclass, stime, hdo
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from jstrain
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from jstrain
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qfedu.entity.Jstrain">
+    insert into jstrain (id, xlclass, stime, 
+      hdo)
+    values (#{id,jdbcType=INTEGER}, #{xlclass,jdbcType=VARCHAR}, #{stime,jdbcType=VARCHAR}, 
+      #{hdo,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qfedu.entity.Jstrain">
+    insert into jstrain
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="xlclass != null">
+        xlclass,
+      </if>
+      <if test="stime != null">
+        stime,
+      </if>
+      <if test="hdo != null">
+        hdo,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="xlclass != null">
+        #{xlclass,jdbcType=VARCHAR},
+      </if>
+      <if test="stime != null">
+        #{stime,jdbcType=VARCHAR},
+      </if>
+      <if test="hdo != null">
+        #{hdo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qfedu.entity.Jstrain">
+    update jstrain
+    <set>
+      <if test="xlclass != null">
+        xlclass = #{xlclass,jdbcType=VARCHAR},
+      </if>
+      <if test="stime != null">
+        stime = #{stime,jdbcType=VARCHAR},
+      </if>
+      <if test="hdo != null">
+        hdo = #{hdo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qfedu.entity.Jstrain">
+    update jstrain
+    set xlclass = #{xlclass,jdbcType=VARCHAR},
+      stime = #{stime,jdbcType=VARCHAR},
+      hdo = #{hdo,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="select" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from jstrain
+  </select>
+</mapper>

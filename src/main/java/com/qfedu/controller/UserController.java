@@ -37,6 +37,7 @@ public class UserController {
 
     @ApiOperation(notes = "用户的账号密码",tags = {"用户登录注册的接口"},value = "登录的接口")
     @GetMapping("login.do")
+    @CrossOrigin
 
     private  ResultVo login(@ApiParam(value = "用户账号密码") String username, String password) {
         ResultVo sf = uservice.login(username, password);

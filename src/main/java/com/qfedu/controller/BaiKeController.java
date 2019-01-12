@@ -58,7 +58,7 @@ public class BaiKeController {
 
     //删除话题删除
     @ApiOperation(notes = "话题删除的接口",tags = {"话题的接口"},value = "话题删除的接口")
-    @PostMapping("delGoods.do")
+    @PostMapping("delHuati.do")
     @CrossOrigin
     public ResultVo delBaike(@ApiParam(value = "删除对象的id") Integer id) {
         int i = baiKeService.delBaike(id);

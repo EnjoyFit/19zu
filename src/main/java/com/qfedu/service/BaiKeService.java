@@ -11,7 +11,7 @@ public interface BaiKeService {
     //删除商品
     public int delBaike(Integer id);
     //修改商品
-    public int updateBaike(BaiKe baiKee);
+    public int updateBaike(Integer ide);
 
     //商品展示
     PageBeanVo<BaiKe> queryPage(int page, int limit);

@@ -2,6 +2,8 @@ package com.qfedu.dao;
 
 import com.qfedu.entity.Xlykecheng;
 
+import java.util.List;
+
 public interface XlykechengMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -15,6 +17,6 @@ public interface XlykechengMapper {
 
     int updateByPrimaryKey(Xlykecheng record);
 
-    Xlykecheng select();
+    List<Xlykecheng> select();
 
 }

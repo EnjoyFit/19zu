@@ -46,8 +46,8 @@ public class BaiKeController {
     @ApiOperation(notes = "话题对象的信息",tags = {"话题的接口"},value = "话题修改的接口")
     @GetMapping("updateBaike.do")
     @CrossOrigin
-    public ResultVo upBaike(@ApiParam(value = "对象") BaiKe baiKe) {
-        int i = baiKeService.updateBaike(baiKe);
+    public ResultVo upBaike(@ApiParam(value = "id") Integer id) {
+        int i = baiKeService.updateBaike(id);
         if (i>0) {
             return ResultVo.setOK(null);
         } else {

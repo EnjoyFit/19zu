@@ -14,11 +14,11 @@ public interface BaiKeMapper {
 
     BaiKe selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(BaiKe record);
+    int updateByPrimaryKeySelective(Integer id);
 
     int updateByPrimaryKey(BaiKe record);
 
     int selectCount();
 
-    List<BaiKe> selectByPage(Map<String,Object> param);
+    List<BaiKe> select(Map<String,Object> param);
 }

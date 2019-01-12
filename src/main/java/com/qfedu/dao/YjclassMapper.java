@@ -2,6 +2,8 @@ package com.qfedu.dao;
 
 import com.qfedu.entity.Yjclass;
 
+import java.util.List;
+
 public interface YjclassMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -15,5 +17,5 @@ public interface YjclassMapper {
 
     int updateByPrimaryKey(Yjclass record);
 
-    Yjclass select();
+    List<Yjclass> select();
 }

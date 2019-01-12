@@ -72,6 +72,6 @@
   <select id="select" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from yiclass
+    from yjclass
   </select>
 </mapper>

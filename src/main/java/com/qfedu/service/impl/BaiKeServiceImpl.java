@@ -28,8 +28,8 @@ public class BaiKeServiceImpl implements BaiKeService {
     }
 
     @Override
-    public int updateBaike(BaiKe baike) {
-        return baiKeMapper.updateByPrimaryKeySelective(baike);
+    public int updateBaike(Integer id) {
+        return baiKeMapper.updateByPrimaryKeySelective(id);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class BaiKeServiceImpl implements BaiKeService {
         Map<String,Object> map=new HashMap();
         map.put("index",(page-1)*limit);
         map.put("limit",limit);
-        return PageBeanVo.setPage(baiKeMapper.selectCount(), baiKeMapper.selectByPage(map));
+        return PageBeanVo.setPage(baiKeMapper.selectCount(), baiKeMapper.select(map));
     }
 
 

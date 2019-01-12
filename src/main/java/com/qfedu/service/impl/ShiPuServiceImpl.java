@@ -36,6 +36,6 @@ public class ShiPuServiceImpl implements ShiPuService {
         Map<String,Object> map=new HashMap();
         map.put("index",(page-1)*limit);
         map.put("limit",limit);
-        return PageBeanVo.setPage(shiPuMapper.selectCount(),shiPuMapper.selectByPage(map));
+        return PageBeanVo.setPage(shiPuMapper.selectCount(),shiPuMapper.select(map));
     }
 }

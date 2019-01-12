@@ -76,6 +76,7 @@
   </select>
 
   <select id="selectByRname" resultMap="BaseResultMap">
-    select id,imgurl where rname = #{rname}
+    select id,imgurl from running
+ where rname = #{rname}
   </select>
 </mapper>

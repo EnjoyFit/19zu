@@ -106,7 +106,7 @@
 
   select
   username,password
-  from sys_user where username =#{username} and password
+  from user where username =#{username} and password
   =#{password}
 </select>
 </mapper>

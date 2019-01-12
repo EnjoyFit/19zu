@@ -21,5 +21,5 @@ public interface ShiPuMapper {
 
     int selectCount();
 
-    List<ShiPu> selectByPage(Map<String,Object> param);
+    List<ShiPu> select(Map<String,Object> param);
 }

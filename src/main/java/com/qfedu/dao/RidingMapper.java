@@ -2,6 +2,8 @@ package com.qfedu.dao;
 
 import com.qfedu.entity.Riding;
 
+import java.util.List;
+
 public interface RidingMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,5 +16,5 @@ public interface RidingMapper {
     int updateByPrimaryKeySelective(Riding record);
 
     int updateByPrimaryKey(Riding record);
-    Riding select();
+    List<Riding> select();
 }

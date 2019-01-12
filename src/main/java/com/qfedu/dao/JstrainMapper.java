@@ -2,6 +2,8 @@ package com.qfedu.dao;
 
 import com.qfedu.entity.Jstrain;
 
+import java.util.List;
+
 public interface JstrainMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -15,5 +17,5 @@ public interface JstrainMapper {
 
     int updateByPrimaryKey(Jstrain record);
 
-    Jstrain select();
+    List<Jstrain> select();
 }

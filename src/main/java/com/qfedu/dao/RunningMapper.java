@@ -2,6 +2,8 @@ package com.qfedu.dao;
 
 import com.qfedu.entity.Running;
 
+import java.util.List;
+
 public interface RunningMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -15,7 +17,7 @@ public interface RunningMapper {
 
     int updateByPrimaryKey(Running record);
 
-    Running select();
+    List<Running> select();
 
     Running selectByRname(String rname);
 }
